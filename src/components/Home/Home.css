@@ -1,0 +1,26 @@
+#videoGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* Display in 5 columns */
+  gap: 16px;
+  padding: 16px;
+}
+
+.video-grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.videoLink {
+  flex: 1 1 calc(20% - 16px); /* 20% width with 16px gap */
+  box-sizing: border-box;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.videoThumbnail {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 8px;
+  border-radius: 1em;
+}
