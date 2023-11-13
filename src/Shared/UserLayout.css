@@ -1,0 +1,57 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    /* Left sidebar and content area */
+    grid-template-rows: auto 1fr auto;
+    /* Header, content, and footer */
+    grid-template-areas:
+        "header header"
+        "menu container"
+        "footer footer";
+    height: 100vh;
+    /* Ensure the grid covers the entire viewport height */
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    grid-area: header;
+    background-color: #51b2bc;
+    color: #fff;
+    padding: 10px;
+}
+
+.navigation {
+    grid-area: menu;
+    background-color: #333;
+    padding: 10px;
+    overflow-x: hidden;
+    transition: 0.5s;
+    position: relative;
+    z-index: 1;
+}
+
+.navigation a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 0;
+    transition: background-color 0.3s;
+}
+
+.navigation a:hover {
+    background-color: #555;
+}
+
+.container {
+    grid-area: container;
+    padding: 20px;
+}
+
+.footer {
+    grid-area: footer;
+    background-color: #51b2bc;
+    color: #fff;
+    padding: 10px;
+    text-align: center; /* Center the text in the footer */
+}

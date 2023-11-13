@@ -1,25 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+// Import necessary modules
+import { Route, Routes } from 'react-router-dom';
+import UserLayoutComponent from './Shared/UserLayoutComponent';
+import HomeComponent from './components/Home/HomeComponent/HomeComponent';
+import RegistrationComponent from './components/Registration/RegistrationComponent';
+import NoPageComponent from './Shared/NoPageComponent';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    
+    <Routes>
+        <Route path="/" element={<UserLayoutComponent />}>
+            <Route index element={<HomeComponent />} />
+            <Route path="register" element={<RegistrationComponent />} />
+            <Route path="*" element={<NoPageComponent />} />
+        </Route>
+    </Routes>
   );
 }
 
