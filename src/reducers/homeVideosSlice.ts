@@ -1,15 +1,10 @@
 // src/redux/videosSlice.ts
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
-import { Video } from '../types';
-
-export const fetchVideos = createAsyncThunk<Video[]>('videos/fetchVideos', async () => {
-  const response = await axios.get('https://jsonplaceholder.typicode.com/photos');
-  return response.data as Video[];
-});
+import { HomeVideo } from '../types';
+import { fetchHomeVideos } from '../actions/homeActions';
 
 interface VideosState {
-  data: Video[];
+  data: HomeVideo[];
   status: 'idle' | 'loading' | 'succeeded' | 'failed';
   error: string | null;
 }
@@ -26,16 +21,16 @@ const videosSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(fetchVideos.pending, (state) => {
+      .addCase(fetchHomeVideos.pending, (state) => {
         state.status = 'loading';
         state.error = null;
       })
-      .addCase(fetchVideos.fulfilled, (state, action) => {
+      .addCase(fetchHomeVideos.fulfilled, (state, action) => {
         state.status = 'succeeded';
         state.data = action.payload;
         state.error = null;
       })
-      .addCase(fetchVideos.rejected, (state, action) => {
+      .addCase(fetchHomeVideos.rejected, (state, action) => {
         state.status = 'failed';
         state.error = action.error.message || 'Failed to fetch videos';
       });

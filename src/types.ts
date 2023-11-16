@@ -1,5 +1,5 @@
 // src/types.ts
-export interface Video {
+export interface HomeVideo {
     albumId: string;
     id: string;
     title: string;

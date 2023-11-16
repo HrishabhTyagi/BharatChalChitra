@@ -1,6 +1,6 @@
 // src/redux/store.ts
 import { configureStore } from '@reduxjs/toolkit';
-import videosReducer from '../reducers/videosSlice';
+import videosReducer from '../reducers/homeVideosSlice';
 
 const store = configureStore({
   reducer: {

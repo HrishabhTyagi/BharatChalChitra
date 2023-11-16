@@ -1,14 +1,14 @@
 // src/actions/videoActions.ts
 import { createAsyncThunk, AsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-import { Video } from '../types';
-export type VideoPayload = Video[];
+import { HomeVideo } from '../types';
+export type HomeVideoPayload = HomeVideo[];
 
-export const fetchVideos: AsyncThunk<Video[], void, {}> = createAsyncThunk(
+export const fetchHomeVideos: AsyncThunk<HomeVideo[], void, {}> = createAsyncThunk(
   'videos/fetchVideos',
   async () => {
     const api = 'https://jsonplaceholder.typicode.com/photos';
     const response = await axios.get(api);
-    return response.data as VideoPayload;
+    return response.data as HomeVideoPayload;
   }
 );

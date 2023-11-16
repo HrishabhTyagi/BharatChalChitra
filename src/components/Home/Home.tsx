@@ -1,7 +1,8 @@
 // src/components/Home.tsx
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchVideos, selectVideos } from '../../reducers/videosSlice';
+import { selectVideos } from '../../reducers/homeVideosSlice';
+import { fetchHomeVideos } from '../../actions/homeActions';
 import { AppDispatch, RootState } from '../../store/store';
 import './Home.css';
 
@@ -10,7 +11,7 @@ const Home: React.FC = () => {
   const { data, status, error } = useSelector((state: RootState) => selectVideos(state));
 
   useEffect(() => {
-    dispatch(fetchVideos());
+    dispatch(fetchHomeVideos());
   }, [dispatch]);
 
   if (status === 'loading') {
