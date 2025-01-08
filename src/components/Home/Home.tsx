@@ -20,7 +20,7 @@ const Home: React.FC = () => {
 
   if (status === 'failed') {
     return <div>Error: {error}</div>;
-  }
+  } 
 
   return (
     <div id="videoGrid" className="video-grid">

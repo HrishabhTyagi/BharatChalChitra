@@ -1,5 +1,5 @@
 #videoGrid {
-  display: grid;
+  display: inline-flex;
   grid-template-columns: repeat(5, 1fr); /* Display in 5 columns */
   gap: 16px;
   padding: 16px;

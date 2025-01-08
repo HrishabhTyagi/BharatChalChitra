@@ -31,18 +31,6 @@
     z-index: 1;
 }
 
-.navigation a {
-    display: block;
-    color: #fff;
-    text-decoration: none;
-    padding: 8px 0;
-    transition: background-color 0.3s;
-}
-
-.navigation a:hover {
-    background-color: #555;
-}
-
 .container {
     grid-area: container;
     padding: 20px;
@@ -53,5 +41,6 @@
     background-color: #51b2bc;
     color: #fff;
     padding: 10px;
-    text-align: center; /* Center the text in the footer */
+    text-align: center;
+    /* Center the text in the footer */
 }

@@ -1,30 +1,32 @@
-import { Link } from "react-router-dom";
-import { useState } from "react";
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Menu.css';
 
-function MenuComponent() {
+interface MenuComponentProps {
+    isMenuOpen: boolean;
+}
+
+const MenuComponent: React.FC<MenuComponentProps> = ({ isMenuOpen }) => {
+
+    const defaultMenu = [{ path: '/', menuName: 'Home' },
+    { path: '/register', menuName: 'Shorts' },
+    { path: '/register', menuName: 'Subscription' },
+    { path: '/register', menuName: 'Favourite' },
+    { path: '/register', menuName: 'History' },
+    ]
+    const [menu, setMenu] = useState(defaultMenu);
 
     return (
-        <nav>
+        <nav className={isMenuOpen ? 'menu open' : 'menu'}>
             <ul className="left-menu">
-                <li>
-                    <Link to="/">Home</Link>
-                </li>
-                <li>
-                    <Link to="/register">Shorts</Link>
-                </li>
-                <li>
-                    <Link to="/register">Subscription</Link>
-                </li>
-                <li>
-                    <Link to="/register">Favourite</Link>
-                </li>
-                <li>
-                    <Link to="/register">History</Link>
-                </li>
+                {
+                    menu.map((m, index) => (
+                        <li key={index}><Link to={m.path}>{m.menuName}</Link></li>
+                    ))
+                }
             </ul>
         </nav>
     );
-}
+};
 
 export default MenuComponent;

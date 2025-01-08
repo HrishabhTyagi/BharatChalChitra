@@ -1,42 +1,49 @@
-/* .left-menu {
-
-    color: white;
-    list-style: none;
-}
-
-.left-menu>li {
-    text-decoration: none;
-    color: black;
-    background-color: white;
-} */
-
-
 .left-menu {
     color: white;
     list-style: none;
-    background-color: #333;
     padding: 10px;
-    width: 200px; /* Adjust the width as needed */
+    width: 200px;
+    /* Adjust the width as needed */
 }
 
-.left-menu > li {
+.left-menu>li {
     transition: background-color 0.3s, color 0.3s;
-    margin-bottom: 5px; /* Adjust the spacing between menu items */
+    margin-bottom: 5px;
+    /* Adjust the spacing between menu items */
 }
 
-.left-menu > li:hover {
-    background-color: #fff; /* Change background color on hover */
-    color: #333; /* Change text color on hover */
+.left-menu>li:hover {
+    background-color: #fff;
+    /* Change background color on hover */
+    color: #333;
+    /* Change text color on hover */
 }
 
-.left-menu > li > a {
+.left-menu>li>a {
     text-decoration: none;
     color: white;
     display: block;
-    padding: 8px; /* Adjust the padding as needed */
+    padding: 8px;
+    transition: background-color 0.3s;
+    /* Adjust the padding as needed */
 }
 
 /* Optional: Add a subtle animation to the links */
-.left-menu > li > a:hover {
+.left-menu>li>a:hover {
     transform: scale(1.1);
+    background-color: #555;
+}
+
+.menu {
+    position: fixed;
+    /* Set position to fixed */
+    left: -200px;
+    /* Hide menu initially */
+    transition: left 0.5s;
+    /* Add transition for sliding effect */
+}
+
+.menu.open {
+    left: 0;
+    /* Slide menu in */
 }
