@@ -2,7 +2,6 @@
     color: white;
     list-style: none;
     padding: 10px;
-    width: 200px;
     /* Adjust the width as needed */
 }
 
@@ -35,15 +34,19 @@
 }
 
 .menu {
-    position: fixed;
-    /* Set position to fixed */
-    left: -200px;
-    /* Hide menu initially */
-    transition: left 0.5s;
-    /* Add transition for sliding effect */
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 200px;
+    transition: transform 0.5s ease-in-out;
+    /* Smooth sliding */
+    background-color: #333;
+    z-index: 2;
+    overflow-y: auto;
+    transform: translateX(-100%);
 }
 
 .menu.open {
-    left: 0;
-    /* Slide menu in */
+    transform: translateX(0);
 }

@@ -9,7 +9,7 @@ import './UserLayout.css';
 import './UserLayout.css';
 
 const UserLayout: React.FC = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(true);
 
   const toggleMenu = (): void => {
     setIsMenuOpen(!isMenuOpen);
@@ -20,7 +20,7 @@ const UserLayout: React.FC = () => {
       <header className="header">
         <Header toggleMenu={toggleMenu} />
       </header>
-      <div className="navigation">
+      <div className={isMenuOpen ? 'navigation' : 'navigation hidden'}>
         <Menu isMenuOpen={isMenuOpen} />
       </div>
       <main className="container">

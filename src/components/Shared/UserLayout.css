@@ -24,11 +24,16 @@
 .navigation {
     grid-area: menu;
     background-color: #333;
-    padding: 10px;
     overflow-x: hidden;
-    transition: 0.5s;
+    transition: width 0.5s ease-in-out;
     position: relative;
     z-index: 1;
+    width: 200px;
+    /* Default width */
+}
+
+.navigation.hidden {
+    width: 0;
 }
 
 .container {
